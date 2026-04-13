@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="FSUFeaFvzkygL-gv6hp9rg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="google.com/search" DesignTimeRectangle="624, 472, 489, 39" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='wob_loc' tag='DIV' /&gt;" Guid="e0ca100e-848c-48ef-b213-c02b2b1e8184" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Tomorrow&amp;apos;s weather in Rosehill in degree Celsius - Google Search' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="64e09bd9bb7938c8b2c17056113c882d.jpg" xmlns="">01SFBfBvii0iq5S72QQ1wuw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
