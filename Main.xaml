@@ -96,19 +96,21 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="648,495.65666666666664" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="709.3333333333333,2552.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="City" />
       <Variable x:TypeArguments="x:String" Name="Weather" />
       <Variable x:TypeArguments="x:String" Name="Temperature" />
       <Variable x:TypeArguments="x:Int32" Name="TemperatureInt32" />
+      <Variable x:TypeArguments="x:String" Name="Outfitsuggestion" />
+      <Variable x:TypeArguments="x:String" Name="RainGear" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="This ask the user for a city name so that the weather can be searched for that city" DisplayName="Input City into Dialog" sap:VirtualizedContainerService.HintSize="450,102" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Enter the name of the city you're currently in" Title="Get city name" TopMost="False">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="This ask the user for a city name so that the weather can be searched for that city" DisplayName="Input City into Dialog" sap:VirtualizedContainerService.HintSize="634,102" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Enter the name of the city you're currently in" Title="Get city name" TopMost="False">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[City]</OutArgument>
       </ui:InputDialog.Result>
@@ -120,7 +122,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InputDialog>
-    <ui:LogMessage DisplayName="Log City Name to Scrape" sap:VirtualizedContainerService.HintSize="450,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;The city: &quot;+City]">
+    <ui:LogMessage DisplayName="Log City Name to Scrape" sap:VirtualizedContainerService.HintSize="634,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;The city: &quot;+City]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -128,7 +130,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Attach to Edge Browser and open Google" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="450,57.333333333333336" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Always]" ScopeGuid="91311de5-71d8-4052-b5b5-d19b48a60963" UserDataFolderMode="[UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.CustomFolder]" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" DisplayName="Attach to Edge Browser and open Google" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="634,1586.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Always]" ScopeGuid="91311de5-71d8-4052-b5b5-d19b48a60963" UserDataFolderMode="[UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.CustomFolder]" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -144,6 +146,16 @@
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="google.com" ContentHash="mEkLlnuv5Uib9mqYrkEJ3A" DesignTimeRectangle="531, 399, 662, 75" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='APjFqb' tag='TEXTAREA' /&gt;" Guid="5e0c6fa6-09aa-4d23-87cd-51d88610f369" InformativeScreenshot="cb9df0d8f6096d8b5545b73a634db20b.jpg" Reference="JXfqmSHZg06QOO98K1hBYQ/yzE6QXbrLU-LmyaGrQu6IA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Google Search Button" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,267.3333333333333" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="91311de5-71d8-4052-b5b5-d19b48a60963" Version="V5">
               <uix:NClick.Target>
@@ -179,7 +191,7 @@
                 <uix:TargetAnchorable BrowserURL="google.com/search" ContentHash="k3sMpW0Yj02K6acSuC5WhQ" DesignTimeRectangle="1037, 542, 76, 27" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='wob_dc' tag='SPAN' /&gt;" Guid="b410426e-67fd-4f03-b427-b348442b4295" InformativeScreenshot="47b7aab56297782b3f2e2ab537bc2d39.jpg" Reference="JXfqmSHZg06QOO98K1hBYQ/H0b-kFc1GECuzVsGZCVpgA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Tomorrow&amp;apos;s weather in London in degree Celsius - Google Search' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NGetText.Target>
             </uix:NGetText>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Weather is: &quot;+Weather]" />
+            <ui:LogMessage DisplayName="Log Weather" sap:VirtualizedContainerService.HintSize="416,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Weather is: &quot;+Weather]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -202,19 +214,15 @@
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <Flowchart DisplayName="Flowchart for Outfir Suggestion" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="Flowchart_1">
-      <Flowchart.Variables>
-        <Variable x:TypeArguments="x:String" Name="RainGear" />
-        <Variable x:TypeArguments="x:String" Name="Outfitsuggestion" />
-      </Flowchart.Variables>
+    <Flowchart DisplayName="Flowchart for Outfir Suggestion" sap:VirtualizedContainerService.HintSize="634,669.3333333333334" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <av:Point x:Key="ShapeLocation">275,35</av:Point>
           <av:Size x:Key="ShapeSize">50,50</av:Size>
@@ -251,7 +259,7 @@
                 <OutArgument x:TypeArguments="x:String">[RainGear]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">["Bring an umbrella"]</InArgument>
+                <InArgument x:TypeArguments="x:String">[" Bring an umbrella"]</InArgument>
               </Assign.Value>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -286,7 +294,7 @@
                         <OutArgument x:TypeArguments="x:String">[Outfitsuggestion]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">["It's very cold outside, wear a duck down jacket"]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[" It's very cold outside, wear a duck down jacket"]</InArgument>
                       </Assign.Value>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -323,7 +331,7 @@
                             <OutArgument x:TypeArguments="x:String">[Outfitsuggestion]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">["It's very hot outside, wear a cap and sunglasses"]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[" It's very hot outside, wear a cap and sunglasses"]</InArgument>
                           </Assign.Value>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -346,7 +354,7 @@
                             <OutArgument x:TypeArguments="x:String">[Outfitsuggestion]</OutArgument>
                           </Assign.To>
                           <Assign.Value>
-                            <InArgument x:TypeArguments="x:String">["Temperature is mild, bring a light Jacket if you want."]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[" Temperature is mild, bring a light Jacket if you want."]</InArgument>
                           </Assign.Value>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -373,5 +381,6 @@
       <x:Reference>__ReferenceID4</x:Reference>
       <x:Reference>__ReferenceID5</x:Reference>
     </Flowchart>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Suggest Clothing To User" sap:VirtualizedContainerService.HintSize="634,114.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;The temperature in &quot;+City.ToString+&quot; tomorrow is &quot;+Temperature.ToString+&quot; degree Celsius. The weather is &quot;+Weather.ToString.ToLower+&quot;.&quot;+Outfitsuggestion+RainGear]" />
   </Sequence>
 </Activity>
