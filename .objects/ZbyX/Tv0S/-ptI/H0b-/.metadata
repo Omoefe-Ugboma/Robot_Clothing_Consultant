@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Cloudy",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "H0b-kFc1GECuzVsGZCVpgA",
+  "Reference": "JXfqmSHZg06QOO98K1hBYQ/H0b-kFc1GECuzVsGZCVpgA",
+  "ParentRef": "JXfqmSHZg06QOO98K1hBYQ/-ptIg3QM7U2gtX57Cm46gQ",
+  "Created": "2026-04-13T10:03:21.2339306Z",
+  "Updated": "2026-04-13T10:03:21.2339306Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.28.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.12.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
