@@ -37,6 +37,7 @@
       <x:String>UiPath.Platform.SyncObjects</x:String>
       <x:String>System.Security</x:String>
       <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -93,7 +94,7 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="641.3333333333333,1061.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="676,1373.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="City" />
     </Sequence.Variables>
@@ -102,18 +103,26 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input City into Dialog" sap:VirtualizedContainerService.HintSize="452,278" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Enter the name of the city you're currently in" Title="Get city name" TopMost="False">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="This ask the user for a city name so that the weather can be searched for that city" DisplayName="Input City into Dialog" sap:VirtualizedContainerService.HintSize="452,322.6666666666667" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Enter the name of the city you're currently in" Title="Get city name" TopMost="False">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[City]</OutArgument>
       </ui:InputDialog.Result>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InputDialog>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Attach to Edge Browser and open Google" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,760.6666666666666" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Always]" ScopeGuid="91311de5-71d8-4052-b5b5-d19b48a60963" UserDataFolderMode="[UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.CustomFolder]" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Attach to Edge Browser and open Google" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1028" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Always]" ScopeGuid="91311de5-71d8-4052-b5b5-d19b48a60963" UserDataFolderMode="[UiPath.UIAutomationNext.Enums.BrowserUserDataFolderMode.CustomFolder]" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,566" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,833.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="Temperature" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -124,7 +133,7 @@
                 <uix:TargetAnchorable BrowserURL="google.com" ContentHash="mEkLlnuv5Uib9mqYrkEJ3A" DesignTimeRectangle="531, 399, 662, 75" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='APjFqb' tag='TEXTAREA' /&gt;" Guid="5e0c6fa6-09aa-4d23-87cd-51d88610f369" InformativeScreenshot="cb9df0d8f6096d8b5545b73a634db20b.jpg" Reference="JXfqmSHZg06QOO98K1hBYQ/yzE6QXbrLU-LmyaGrQu6IA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Google Search Button" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,258" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="91311de5-71d8-4052-b5b5-d19b48a60963" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Google Search Button" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,267.3333333333333" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="91311de5-71d8-4052-b5b5-d19b48a60963" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="google.com" ContentHash="yt8X2ZfnCUO1mXmq_o6LKA" DesignTimeRectangle="758, 519, 193, 54" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-role='button' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;center&amp;gt;input' tag='INPUT' type='submit' /&gt;" Guid="a91fe56e-9424-499a-affe-4f1ecac5c98f" InformativeScreenshot="98d5d67ecae2ab835777b6e996533514.jpg" Reference="JXfqmSHZg06QOO98K1hBYQ/ajam3fPoVkatCK9MwQMqCg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NClick.Target>
@@ -139,6 +148,12 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
+            <uix:NGetText DisplayName="Get Temperature Text " HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,143.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="91311de5-71d8-4052-b5b5-d19b48a60963" TextString="[Temperature]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="google.com/search" ContentHash="MS1X1uGrkkm6eC_1qJgW9Q" DesignTimeRectangle="240, 468, 79, 91" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='wob_tm' tag='SPAN' /&gt;" Guid="52cf5cbd-81f3-4aef-bfd8-56973b01a960" InformativeScreenshot="d0885d3a1e9d443c0d492e0970b12fd2.jpg" Reference="JXfqmSHZg06QOO98K1hBYQ/RsXWKQ4orECY3TjFBSF6hg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Tomorrow&amp;apos;s weather in Laos in degree Celsius - Google Search' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,114.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[Temperature]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
